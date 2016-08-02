@@ -2,7 +2,7 @@
 //This is a automatic generated file
 //Please do not modify this file
 //If you touch this file your change will be overwritten during the next build
-//This file has been generated on 2016-08-01 15:30:15
+//This file has been generated on 2016-08-02 12:44:13
 
 #include "Arduino.h"
 #include "lcd_menu.h"

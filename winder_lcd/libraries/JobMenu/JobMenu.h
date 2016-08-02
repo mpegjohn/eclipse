@@ -11,6 +11,24 @@
 #define LCD_COLS 20
 #define LCD_ROWS 4
 
+  // Send job parameters to the other UNO
+  // [0x1] -- Mode 1 comand job paremeters
+  // [4 bytes] -- wire size
+  // [4 bytes] -- Total turns
+  // [4 bytes ] -- spool length
+  // [4 bytes ] -- Turns per layer
+  // [1 byte ] -- Number of whole layers
+  // [4 bytes ] -- Turns last layer
+#define I2C_TX_LENGTH 22
+
+//[1 byte layer]
+//[4 bytes turns]
+//[4 bytes layer turns]
+//[4 bytes speed]
+//[1 byte] direction 1 = L to R, 0 = R to L
+//[1 byte] running 1 = running, 0 - stopped
+#define I2C_RX_LENGTH 15
+
 typedef enum menuSelection { cancelSelected, okSelected } menuSelection_t;
 
 typedef union floatbytes {
@@ -19,7 +37,7 @@ typedef union floatbytes {
 } Floatbyte_t;
 
 typedef struct stackupFloats {
-  Floatbyte_t numberWholeLayers;
+  uint8_t numberWholeLayers;
   Floatbyte_t turnsWholeLayer;
   Floatbyte_t turnsLastLayer;
 } StackFloatBytes_t;
