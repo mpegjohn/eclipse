@@ -21,12 +21,6 @@ typedef enum mainMenuMode {
   manualMode
 } mainMenuMode_t;
 
-//struct stackup {
-//  uint8_t numberWholeLayers;
-//  double turnsWholeLayer;
-//  double turnsLastLayer;
-//};
-
 /*
 * This is the first function to get called.
 * It displays the main menu of
